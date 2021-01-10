@@ -33,16 +33,16 @@ generateBtn.addEventListener("click", () => {
     includedChar = "";
 
     if (upper) {
-
+        includedChar += upperChar;
     }
     if (lower) {
-
+        includedChar += lowerChar;
     }
     if (special) {
-
+        includedChar += specialChar;
     }
     if (number) {
-
+        includedChar += numberChar;
     }
     console.log();
     writePassword()

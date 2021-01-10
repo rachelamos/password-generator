@@ -44,12 +44,20 @@ generateBtn.addEventListener("click", () => {
     if (number) {
         includedChar += numberChar;
     }
-    console.log();
+    console.log(includedChar);
     writePassword()
 });
 
 // Function to call the prompt for length.
 // Alert if length is not between 8-128 characters long.
+function promptLength() {
+    var pwLength = prompt("Please choose the length of your password.");
+    if (parseInt(pwLength) < 8 || parseInt(pwLength)
+    > 128) {
+        alert("Password length must be between " + 8 + " and " 128);
+        promptLength();
+    } else length = pwLength
+}
 
 // Function to call the types of characters to be included.
 // Alert if none of the types are chosen.

@@ -52,6 +52,7 @@ generateBtn.addEventListener("click", () => {
 
 // Function to call the prompt for length.
 // Alert if length is not between 8-128 characters long.
+// Alert if do not enter length - still needed.
 function promptLength() {
     var pwLength = prompt("Please choose the length of your password.");
     if (parseInt(pwLength) < min || parseInt(pwLength)
@@ -60,6 +61,9 @@ function promptLength() {
         promptLength();
     } else length = pwLength
 }
+ // } else if (!pwlength) {
+    //     alert("You must enter desired length of your password.");
+    //     promptLength();
 
 // Function to call the types of characters to be included.
 // Alert if none of the types are chosen.
@@ -76,6 +80,16 @@ function promptChar() {
 }
 
 // Function to get random compilation of all variables chosen.
-
+function randomChar(grouping) {
+    return grouping[Math.floor(Math.random() * grouping.length)];
+}
 
 // Function to take random compilation and make it the length chosen by user.
+function generatePassword() {
+    var randomPassword = "";
+
+    for(var i=0; i< length; i++) {
+        randomPassword += randomChar(includedChar);
+    }
+    return randomPassword;
+}

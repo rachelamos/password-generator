@@ -59,11 +59,11 @@ function promptLength() {
     > max) {
         alert("Password length must be between " + min + " and " + max);
         promptLength();
+    } else if (!pwlength) {
+        alert("You must enter desired length of your password.");
+        promptLength();
     } else length = pwLength
 }
- // } else if (!pwlength) {
-    //     alert("You must enter desired length of your password.");
-    //     promptLength();
 
 // Function to call the types of characters to be included.
 // Alert if none of the types are chosen.
